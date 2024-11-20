@@ -1,0 +1,41 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo '🔍 Checking code quality and building your project before committing...'
+
+# Check Prettier standards
+npm run check-format ||
+(
+    echo '🚨 Style Check Failed! 🚨
+    Please run "npm run format" to fix the issues, stage the changes, and try committing again.';
+    false;
+)
+
+# Check ESLint standards
+npm run check-lint ||
+(
+    echo '⚠️ Lint Check Failed! ⚠️
+    Please fix the issues listed above, stage the changes, and try committing again.';
+    false;
+)
+
+# Check TypeScript types
+npm run check-types ||
+(
+    echo '❌ Type Check Failed! ❌
+    Please review the errors above, fix the issues, and try committing again.';
+    false;
+)
+
+# Attempt to build the project
+echo '🔧 Running build process...'
+
+npm run build ||
+(
+    echo '⛔ Build Failed! ⛔
+    Please check the errors above, fix the issues, and try committing again.';
+    false;
+)
+
+# Success message
+echo '✅ All checks passed! Committing your changes now... ✅'
