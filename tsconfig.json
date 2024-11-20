@@ -19,14 +19,19 @@
     "skipLibCheck": true,
     "sourceMap": true,
     "strict": true,
-    "target": "es2018",
+    "target": "es5",
     "incremental": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"]
+    },
     "plugins": [
       {
         "name": "next"
       }
     ]
   },
+  "forceConsistentCasingInFileNames": true,
   "include": ["**/*.ts", "**/*.tsx", "next-env.d.ts", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]
 }
