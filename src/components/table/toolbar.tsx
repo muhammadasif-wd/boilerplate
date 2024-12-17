@@ -3,12 +3,12 @@
 
 import { Table } from "@tanstack/react-table";
 
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { X } from "lucide-react";
 import { useState } from "react";
 
+import { Button } from "../ui/button";
 import { CalendarRangePicker } from "../ui/calendar-range-picker";
+import { Input } from "../ui/input";
 import { categories, incomeType } from "./data";
 import { FacetedFilter } from "./faceted-filter";
 import { ViewOptions } from "./view-options";

@@ -2,7 +2,8 @@
 
 import { Row } from "@tanstack/react-table";
 
-import { Button } from "@/components/ui/button";
+import { Ellipsis } from "lucide-react";
+import { Button } from "../ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -10,8 +11,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuShortcut,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Ellipsis } from "lucide-react";
+} from "../ui/dropdown-menu";
 
 interface RowActionsProps<TData> {
   row: Row<TData>;

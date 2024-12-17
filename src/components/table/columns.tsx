@@ -1,9 +1,9 @@
 "use client";
 
-import { Checkbox } from "@/components/ui/checkbox";
-import { cn } from "@/lib/utils";
 import { ColumnDef } from "@tanstack/react-table";
 import { TrendingDown, TrendingUp } from "lucide-react";
+import { cn } from "../../lib/utils";
+import { Checkbox } from "../ui/checkbox";
 import { ColumnHeader } from "./column-header";
 import { RowActions } from "./row-actions";
 import { Expense } from "./schema";
@@ -99,7 +99,7 @@ export const columns: ColumnDef<Expense>[] = [
           <span
             className={cn(
               "capitalize",
-              type === "income" ? "text-green-500" : "text-red-500"
+              type === "income" ? "text-green-500" : "text-red-500",
             )}
           >
             {" "}

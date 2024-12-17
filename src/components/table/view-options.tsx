@@ -2,7 +2,8 @@
 
 import { Table } from "@tanstack/react-table";
 
-import { Button } from "@/components/ui/button";
+import { SlidersHorizontal } from "lucide-react";
+import { Button } from "../ui/button";
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
@@ -10,8 +11,7 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { SlidersHorizontal } from "lucide-react";
+} from "../ui/dropdown-menu";
 
 interface ViewOptionsProps<TData> {
   table: Table<TData>;
@@ -37,7 +37,7 @@ export function ViewOptions<TData>({ table }: ViewOptionsProps<TData>) {
           .getAllColumns()
           .filter(
             (column) =>
-              typeof column.accessorFn !== "undefined" && column.getCanHide()
+              typeof column.accessorFn !== "undefined" && column.getCanHide(),
           )
           .map((column) => {
             return (
